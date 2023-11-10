@@ -1,4 +1,6 @@
 import QuantitySelector from "./QuantitySelector";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useState } from "react";
 
@@ -10,7 +12,7 @@ export default function (props) {
     return (
         <>
             <div className='product'>
-                <h2>Product Name</h2>
+                <h2>{product.name}</h2>
                 <QuantitySelector
                     id={product.id}
                     price={product.price}
@@ -37,7 +39,8 @@ export default function (props) {
                 <button
                     className='delete-button'
                     onClick={() => props.deleteProduct(product.id)}>
-                    &#128465; Delete
+                    <FontAwesomeIcon icon={faTrash} />
+                    <span style={{ marginLeft: "5px" }}>Delete</span>
                 </button>
             </div>
         </>

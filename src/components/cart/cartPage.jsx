@@ -23,7 +23,9 @@ export default function (props) {
     ));
     return (
         <>
-            <CartCount count={count} />
+            <div align='right'>
+                <CartCount count={count} />
+            </div>
             <div className='product-container'>{cartProduct}</div>
         </>
     );
